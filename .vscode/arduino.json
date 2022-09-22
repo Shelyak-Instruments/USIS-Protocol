@@ -1,0 +1,7 @@
+{
+    "configuration": "flash=2097152_0,freq=125,opt=Optimize3,rtti=Disabled,dbgport=Disabled,dbglvl=None,usbstack=picosdk,boot2=boot2_generic_03h_2_padded_checksum",
+    "board": "rp2040:rp2040:generic",
+    "sketch": "examples\\test-02\\test-02.ino",
+    "port": "COM4",
+    "output": "build-atmega"
+}

@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "gcc",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "c:/tools/gcc-arm-10.3/lib/gcc/arm-none-eabi/10.3.1/include",
+                "${workspaceFolder}/src"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+				"RP2040_BAREMETAL",
+				"RP2040"
+            ],
+            "compilerPath": "c:/tools/gcc-arm-10.3/bin/arm-none-eabi-g++.exe",
+            "cStandard": "c99",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,9 @@
+/build-rp2040
+!/build-rp2040/CMakeLists.txt
+!/build-rp2040/pico_sdk_import.cmake
+/build-desktop
+!/build-desktop/build.sh
+!/build-desktop/premake5.lua
+!/build-desktop/test.txt
+/build-atmega
+/pico-sdk

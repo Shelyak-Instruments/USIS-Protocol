@@ -1,0 +1,37 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "build RP2040",
+			"options": {
+				"env": {
+					"PATH": "/c/dev-shelyak/gcc/gcc-arm-none-eabi-10.3-2021.10/bin:${env:PATH}",
+				},
+				"cwd": "./build-rp2040"
+			},
+			"command": "make.exe ",
+			"args": [],
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build"
+		},
+		{
+			"type": "shell",
+			"label": "build desktop",
+			"options": {
+				"env": {
+					"PATH": "/c/tools/TDM-GCC-64/bin:${env:PATH}",
+				},
+				"cwd": "build-desktop"
+			},
+			"command": "make.exe ",
+			"args": [],
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build"
+		}
+	]
+}
