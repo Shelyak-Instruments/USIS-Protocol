@@ -40,3 +40,18 @@ If you don't have the Arduino IDE, you can directly upload the test-01.ino.uf2 f
 
 The test-01 example is very basic: the only available property is VERSION. Then if you send the message `GET;VERSION;VALUE`, you'll get the reply `M00;VERSION;1.0.0;;` (M00 is the error code saying all is OK). If you send any other dummy message (like `abcd`), you'll get `C02;BAD REQUEST*4C` in return.
 
+## Python script for USIS demo code
+
+As an example for controlling the USIS device through Python, we propose the script 'Demo-Python-USIS.py'. This is a basic script to show a communication example through USIS protocol. It can work with the Pico code above (then in real conditions, with a real USIS device).
+
+To use the Python code, we recommend to follow these steps:
+
+- Create a virtual environment (Virtualenv or Conda), with Python 3.
+- Install the pyserial library (`pip install pyserial`).
+- Copy the script in your working directory.
+- Run the command `python Demo-Python-USIS.py`.
+- You'll have access to a command line system.
+  - Type ? For help (or 'help command' to get more information).
+  - Type 'version' to get the version of the USIS device firmware.
+  - If you type any 'bad' command, you'll get an error message.
+- For each command sent, you can see the Pico LED blinking.
