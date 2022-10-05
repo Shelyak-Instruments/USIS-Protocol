@@ -7,3 +7,4 @@
 !/build-desktop/test.txt
 /build-atmega
 /pico-sdk
+.DS_Store
