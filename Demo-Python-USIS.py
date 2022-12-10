@@ -156,7 +156,7 @@ class UVEX(cmd.Cmd):
     def do_version(self, arg):
         '''Returns the firmware and protocol (USIS) version'''
         if (len(arg.split()) == 0): # No argument is required
-            Message = 'GET;VERSION;VALUE\n'
+            Message = 'GET;SOFTWARE_VERSION;VALUE\n'
             reply, val, order = send_order(Message)
             print(f'Order sent: {order}... reply: {reply}  - {order_err[reply]}\nMessage returned: {val}')
         else:
