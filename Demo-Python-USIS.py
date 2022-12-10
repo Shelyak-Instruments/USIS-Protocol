@@ -36,9 +36,9 @@ Locker = Lock()    # Allows to lock processes during variable writing
 
 def format(str):
     "Formate une commande RS232"
-    a = hex(checksum(str))[2:].zfill(2).upper()    # 2: to remove \x, zfill for 2 car
-    chaine = str
-    return chaine
+    str2 = str.strip('\n')
+    cs = hex(checksum(str2))[2:].zfill(2).upper()    # 2: to remove \x, zfill for 2 car
+    return (str2 + '*' + cs + '\n')
 
 
 def checksum(str):
