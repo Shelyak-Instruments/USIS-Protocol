@@ -52,26 +52,26 @@ def checksum(str):
 def send_order(texte):
     # The function returns an error code :
     trame = format(texte)
-    if (SerialPortAvailable == True):
+    if SerialPortAvailable:
         try:    # We check that serial port is up & running
             port_serie.reset_input_buffer()    # to flush the buffer
             port_serie.write(trame.encode('ascii'))    # Sends the message
             Reply_received = False    # Checks if a message is received
             timeout_limit = time.time() + TIMEOUT_VALUE
             timeout_reached = False
-            while (Reply_received == False and timeout_reached == False):
+            while not Reply_received and not timeout_reached:
                 try:
                     if port_serie.in_waiting:
                         ligne = str(port_serie.readline(), 'ascii')
                         Reply_received = True
-                except:
+                except Exception:
                     print("Bug with serial port - " + trame)
                     time.sleep(3)    # Waits for 3 seconds before starting again
                 if (time.time() >= timeout_limit):
                     timeout_reached = True
-            if (Reply_received == True):
+            if Reply_received:
                 return (0, ligne, trame)    # Message received OK
-            if (timeout_reached == True):
+            if timeout_reached:
                 return (2, -1, trame)    # error 2 = timeout
         except serial.SerialException:
             print('The USB port is not available... anymore')
